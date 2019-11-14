@@ -1,1 +1,2 @@
-# chat-app
+#Node JS chat-app
+*.css linguist-language=nodejs
