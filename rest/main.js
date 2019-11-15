@@ -1,13 +1,26 @@
-var express = require('express');
-var app = express();
-var fs = require("fs");
+var express = require('express')
+var app = express()
 
-var http = require('http');
+// Rota para a home, seu domínio.
+app.get('/', function (req, res) {
+  res.send('hello world in Node JS');
+})
 
-var app = http.createServer(function(req,res){
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ a: 1 }));
-});
-app.listen(3000);
+// Rota para /produtos
+app.get('/produtos', function (req, res) {
+  res.send('exibindo produtos!');
+})
 
-// > {"a":1}
+// Rota para /usuarios
+app.get('/usuarios', function (req, res) {
+  res.send('exibindo usuários');
+})
+
+var server = app.listen(3000, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log('Example app listening at http://%s:%s', host, port)
+
+})
