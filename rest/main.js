@@ -3,6 +3,7 @@ var app = express()
 
 // Rota para a home, seu domínio.
 app.get('/', function (req, res) {
+  res.render('index', {});
   res.send('hello world in Node JS');
 })
 
